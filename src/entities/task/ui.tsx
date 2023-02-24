@@ -1,17 +1,17 @@
 import { Task } from "@entities/task/model";
 
-const TaskItem = ({ id, title }: Omit<Task, 'completed'>) => (
+const TaskItem = ({ title }: Omit<Task, 'completed' | 'id'>) => (
     <div>{title}</div>
 )
 
 export const TaskList = ({ tasks }: { tasks: Task[] }) => {
     return (
-        <>
+        <div>
             {
                 tasks.map(task => (
-                    <TaskItem key={task.id} id={task.id} title={task.title} />
+                    <TaskItem key={task.id} title={task.title} />
                 ))
             }
-        </>
+        </div>
     )
 }

@@ -1,6 +1,5 @@
 import { SyntheticEvent, useCallback, useState } from "react";
 import { useDispatch } from "react-redux"
-
 import { v4 as uuidv4 } from "uuid";
 import { addTask } from "@entities/task";
 
@@ -11,11 +10,13 @@ export const AddTask = () => {
 
     const handleSubmit = useCallback((e: SyntheticEvent) => {
         e.preventDefault();
+
         dispatch(addTask({
             id: uuidv4(),
             title: taskName,
             completed: false
         }));
+
         setTaskName('');
     }, [dispatch, taskName]);
 

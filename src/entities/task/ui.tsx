@@ -1,4 +1,4 @@
-import { Task } from '@entities/task/model'
+import { Task } from './model'
 
 const TaskItem = ({ title }: Omit<Task, 'completed' | 'id'>) => <div>{title}</div>
 

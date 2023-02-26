@@ -1,7 +1,7 @@
 import { SyntheticEvent, useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid'
-import { addTask } from '@entities/task'
+import { addTask } from '@/entities/task'
 
 export const AddTask = () => {
   const dispatch = useDispatch()

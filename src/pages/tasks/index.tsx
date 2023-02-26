@@ -1,4 +1,4 @@
-import { TasksManager } from '@widgets/tasks-manager'
+import { TasksManager } from '@/widgets/tasks-manager'
 
 export const TasksPage = () => (
   <div>

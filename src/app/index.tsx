@@ -1,6 +1,7 @@
-import { Routing } from '../pages';
-import './index.scss';
-import { withProviders } from './providers';
+import "./index.scss";
+
+import { Routing } from "../pages";
+import { withProviders } from "./providers";
 
 const App = () => <Routing />;
 

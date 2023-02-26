@@ -116,25 +116,25 @@
           ],
           // App
           [
-            "^@app/shared"
+            "^@/shared"
           ],
           [
-            "^@app/entities"
+            "^@/entities"
           ],
           [
-            "^@app/features"
+            "^@/features"
           ],
           [
-            "^@app/widgets"
+            "^@/widgets"
           ],
           [
-            "^@app/pages"
+            "^@/pages"
           ],
           [
-            "^@app/processes"
+            "^@/processes"
           ],
           [
-            "^@app/app"
+            "^@/app"
           ],
           [
             "^"

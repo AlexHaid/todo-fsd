@@ -1,7 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 
-import { RootState } from "@/app/store";
-
 const sliceName = "taskList";
 
 export type Task = {

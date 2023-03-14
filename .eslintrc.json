@@ -49,10 +49,7 @@
     "feature-sliced-design/layers-hierarchy": [
       "error", 
       { 
-        "alias": "@",
-        "ignoredImports": [
-          "**/app/store"
-        ]
+        "alias": "@"
       }
     ],
     "react/no-array-index-key": "error",

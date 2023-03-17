@@ -1,4 +1,4 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
 const sliceName = "taskList";
 
@@ -8,26 +8,23 @@ export type Task = {
     completed: boolean;
 };
 
-export type State = {
-    tasks: Task[];
-};
-
-const initialState: State = {
-    tasks: [],
-};
+const tasksAdapter = createEntityAdapter<Task>({
+    selectId: (task: Task) => task.id,
+    sortComparer: (a: Task, b: Task) => a.title.localeCompare(b.title),
+});
 
 export const taskListSlice = createSlice({
     name: sliceName,
-    initialState,
+    initialState: tasksAdapter.getInitialState(),
     reducers: {
-        addTask: (state, { payload }: { payload: Task }) => {
-            state.tasks.push(payload);
-        },
+        addTask: tasksAdapter.addOne,
+        deleteTask: tasksAdapter.removeOne,
+        updateTask: tasksAdapter.updateOne,
     },
 });
 
-export const { addTask } = taskListSlice.actions;
+export const { selectById, selectAll, selectIds } = tasksAdapter.getSelectors(
+    (state: RootState) => state.taskList,
+);
 
-const selectSlice = (state: RootState) => state[sliceName];
-
-export const selectTasks = createSelector(selectSlice, ({ tasks }) => tasks);
+export const { addTask, deleteTask, updateTask } = taskListSlice.actions;

@@ -14,6 +14,8 @@ export const AddTask = () => {
         (e: SyntheticEvent) => {
             e.preventDefault();
 
+            if (!taskName) return false;
+
             dispatch(
                 addTask({
                     id: uuidv4(),

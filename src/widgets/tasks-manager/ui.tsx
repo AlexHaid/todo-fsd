@@ -1,11 +1,11 @@
-import { TaskList } from "@/entities/task";
+import { TaskList } from "@/widgets/task-list";
 
-import { AddTask } from "@/features/add-task";
+import { UpsertTask } from "@/features/upsert-task";
 
 export const TasksManager = () => {
     return (
         <div>
-            <AddTask />
+            <UpsertTask />
 
             <TaskList />
         </div>

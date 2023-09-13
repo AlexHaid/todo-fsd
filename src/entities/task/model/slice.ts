@@ -17,7 +17,11 @@ export const taskListSlice = createSlice({
     name: sliceName,
     initialState: tasksAdapter.getInitialState(),
     reducers: {
-        addTask: tasksAdapter.addOne,
+        addTask: (state, action) => {
+            // eslint-disable-next-line no-console
+            console.log(123, action.payload);
+            tasksAdapter.addOne(state, action);
+        },
         deleteTask: tasksAdapter.removeOne,
         updateTask: tasksAdapter.updateOne,
     },

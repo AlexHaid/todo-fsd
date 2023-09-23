@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from "uuid";
 
 import { addTask } from "@/entities/task";
 
-export const UpsertTask = () => {
+export const AddTask = () => {
     const dispatch = useDispatch();
 
     const [taskName, setTaskName] = useState("");
-    // eslint-disable-next-line no-console
+
     const handleSubmit = useCallback(
         (e: SyntheticEvent) => {
             e.preventDefault();
